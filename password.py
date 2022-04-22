@@ -4,14 +4,14 @@ from cryptography.fernet import Fernet
 '''
 def write_key():
     key = Fernet.generate_key()
-    with open("key.key", "wb") as key_file:     #writing in bytes mode
+    with open("key.txt", "wb") as key_file:     #writing in bytes mode
         key_file.write(key)
 
 write_key()
 '''
 
 def load_key():
-    file = open("key.key", "rb")
+    file = open("key.txt", "rb")
     key = file.read()
     file.close()
     return key
